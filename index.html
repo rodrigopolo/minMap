@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>minMap</title>
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<style>
+		#map{ width: 320px; height: 240px; background: #ccc; }
+		</style>
+	</head>
+	<body>
+		<div id="map"></div>
+		<script src="js/minMap.js"></script>
+		<script>
+
+		// An array of markers
+		var markers = [{
+			icon: 'http://rod.gs/rpmarker2.png',	// Custom png icon
+			lat: 14.594215561943921,				// latitude
+			lng: -90.51820814609528					// longitude
+		}, {
+			icon: 'http://rod.gs/rpmarker.png',
+			lat: 14.595111065066071,
+			lng: -90.51790773868561
+		}, {
+			icon: 'http://rod.gs/rpmarker2.png',
+			lat: 14.594745077273895,
+			lng: -90.51723718643188,
+			shadow: false
+		}, {
+			size: 'mid',							// icon size
+			color: 'c81d1d',						// icon color
+			label: 'L',								// icon label, [A-Z, 0-9]
+			lat: 14.59385735967466,					// latitude
+			lng: -90.51744639873505					// longitude
+		}]
+
+		// Create the static Map
+		var map = new minMaps.Map('map',{
+			//key: 'XXXXXXXXXXXXXX',		// Use your own https://developers.google.com/maps/documentation/javascript/tutorial#api_key
+			//format: 'jpg',				// Options: png8 or png (default), png32, gif, jpg, jpg-baseline
+			zoom: 16,						// 0 - 18
+			center: {
+				lat: 14.594521850378376,	// Latitude
+				lng: -90.51768243312836		// Longitude
+			},
+			mapType: 'roadmap',				// Options: roadmap, satellite, terrain (change zoom), hybrid.
+			zoomControl: true,				// Enable Zoom Controls
+			panControls: true,				// Enable Pan Controls
+			//retina: true,					// Enable HiDPI
+			markers: markers				// Array of markers
+		});
+
+		</script>
+	</body>
+
+</html>
